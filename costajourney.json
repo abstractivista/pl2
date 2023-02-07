@@ -1,0 +1,99 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#1f28a8",
+        "marker-size": "medium"
+      },
+      "geometry": {
+        "coordinates": [
+          -119.7867312441272,
+          37.67480983070209
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#de1212",
+        "marker-size": "medium"
+      },
+      "geometry": {
+        "coordinates": [
+          -106.66097529792481,
+          52.13524299407442
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#de1212",
+        "marker-size": "medium"
+      },
+      "geometry": {
+        "coordinates": [
+          -106.60180318650836,
+          52.14463844294579
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#a507b0",
+        "marker-size": "medium"
+      },
+      "geometry": {
+        "coordinates": [
+          -109.904523143208,
+          22.87813250500271
+        ],
+        "type": "Point"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [
+            -119.85279671483761,
+            37.929180495528385
+          ],
+          [
+            -106.66114824373983,
+            52.135375904926946
+          ],
+          [
+            -106.60207932005603,
+            52.14503414480697
+          ]
+        ],
+        "type": "LineString"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "coordinates": [
+          [
+            -119.78657252496171,
+            37.714903355979885
+          ],
+          [
+            -109.90030439468899,
+            22.90350984935064
+          ]
+        ],
+        "type": "LineString"
+      }
+    }
+  ]
+}
