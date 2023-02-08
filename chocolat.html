@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/dark/main.css">
     <script src="https://js.arcgis.com/4.25/"></script>  
       <script>
-      require(["esri/config", "esri/WebMap",
+      require(["esri/config", 
+      "esri/WebMap",
       "esri/views/MapView",
       "esri/widgets/ScaleBar",
       "esri/widgets/Legend"
@@ -30,9 +31,6 @@
       });
         const view = new MapView({
         container: "viewDiv",
-        map: map,
-        center: [-79.430830, 43.682656], // Longitude, latitude
-        zoom: 10, // Zoom level
         map: webmap
         });
       
