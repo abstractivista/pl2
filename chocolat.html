@@ -17,34 +17,24 @@
     <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/dark/main.css">
     <script src="https://js.arcgis.com/4.25/"></script>  
       <script>
-      require(["esri/config", "esri/Map", "esri/views/MapView", "esri/widgets/BasemapToggle",
-      "esri/widgets/BasemapGallery"
-    ], function(esriConfig, Map, MapView, BasemapToggle, BasemapGallery) {
+      require(["esri/config", "esri/WebMap",
+      "esri/views/MapView",
+      "esri/widgets/ScaleBar",
+      "esri/widgets/Legend"
+    ], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
       esriConfig.apiKey = "AAPK2e38eeb2406a4ec09fc9ed971726a530rpzak_itO1OlgiyI-VVaxOXCb6163YW9Ac9VHF-lgjrp0dcGZl6Al0ZF3eaBmQjU";
-        
-        const map = new Map({
-          basemap: "arcgis-topographic"// Basemap layer service
-        });
+        const webmap = new WebMap({
+        portalItem: {
+          id: "41281c51f9de45edaf1c8ed44bb10e30"
+        }
+      });
         const view = new MapView({
         map: map,
         center: [-79.430830, 43.682656], // Longitude, latitude
         zoom: 10, // Zoom level
-        container: "viewDiv" // Div element
+        map: webmap
         });
-         const basemapToggle = new BasemapToggle({
-        view: view,
-        nextBasemap: "arcgis-newspaper"
-     });
-        view.ui.add(basemapToggle,"bottom-right");
-        const basemapGallery = new BasemapGallery({
-        view: view,
-        source: {
-          query: {
-            title: '"World Basemaps for Developers" AND owner:esri'
-          }
-        }
-      });
-      view.ui.add(basemapGallery, "top-right"); // Add to the view
+      
       });
     </script>
   </head>
