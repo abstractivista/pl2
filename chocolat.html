@@ -18,22 +18,23 @@
     <script src="https://js.arcgis.com/4.25/"></script>  
       <script>
       require(["esri/config", 
-      "esri/WebMap",
+      "esri/Map",
       "esri/views/MapView",
-      "esri/widgets/ScaleBar",
-      "esri/widgets/Legend"
-    ], function(esriConfig, WebMap, MapView, ScaleBar, Legend) {
+      "esri/layers/FeatureLayer"
+    ], function(esriConfig, Map, MapView, FeatureLayer) {
       esriConfig.apiKey = "AAPK2e38eeb2406a4ec09fc9ed971726a530rpzak_itO1OlgiyI-VVaxOXCb6163YW9Ac9VHF-lgjrp0dcGZl6Al0ZF3eaBmQjU";
-        const webmap = new WebMap({
-        portalItem: {
-          id: "41281c51f9de45edaf1c8ed44bb10e30"
-        }
-      });
         const view = new MapView({
-        container: "viewDiv",
-        map: webmap
-        });
-      
+    container: "viewDiv",
+    map: map,
+    center: [-118.80543,34.02700],
+    zoom: 13
+  });
+
+//Trailheads feature layer (points)
+  const trailheadsLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Trailheads/FeatureServer/0"
+  });
+      map.add(trailheadsLayer);
       });
     </script>
   </head>
