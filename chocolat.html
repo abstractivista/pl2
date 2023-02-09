@@ -33,7 +33,28 @@
           center: [-79.430830,43.68265],
           zoom: 13
           
-  });   
+  });  
+        const graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+        
+        const point = { //Create a point
+    type: "point",
+    longitude: -79.3957113663936,    , 
+    latitude: 43.64540568441301
+ };
+ const simpleMarkerSymbol = {
+    type: "simple-marker",
+    color: [255, 0, 0],  // Red
+    outline: {
+        color: [255, 255, 255], // White
+        width: 1
+    }
+ }; 
+    const pointGraphic = new Graphic({
+      geometry: point,
+      symbol: simpleMarkerSymbol
+ });
+ graphicsLayer.add(pointGraphic);
         });
     </script>
   </head>
