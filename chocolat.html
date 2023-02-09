@@ -20,6 +20,8 @@
       require(["esri/config", 
       "esri/Map",
       "esri/views/MapView",
+      "esri/Graphic",
+      "esri/layers/GraphicsLayer"
       "esri/layers/FeatureLayer"
     ], function(esriConfig, Map, MapView, FeatureLayer) {
       esriConfig.apiKey = "AAPK2e38eeb2406a4ec09fc9ed971726a530rpzak_itO1OlgiyI-VVaxOXCb6163YW9Ac9VHF-lgjrp0dcGZl6Al0ZF3eaBmQjU";
@@ -27,12 +29,28 @@
           basemap: "arcgis-topographic" // Basemap layer service
 });
         const view = new MapView({
-          container: "viewDiv",
           map: map,
           center: [-79.430830,43.68265],
           zoom: 13
+          container: "viewDiv",
   });
-
+const graphicsLayer = new GraphicsLayer();
+ map.add(graphicsLayer);
+  
+const point = { //Create a point
+    type: "point",
+    longitude: -79.3957113663936,    , 
+    latitude: 43.64540568441301
+ };
+ const simpleMarkerSymbol = {
+    type: "simple-marker",
+    color: [255, 0, 0],  // Orange
+    outline: {
+        color: [255, 255, 255], // White
+        width: 1
+    }
+ };
+              
 //Chocolatier feature layer (points)
   const chocLayer = new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/Chocolatiers/FeatureServer/0"
