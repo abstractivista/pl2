@@ -21,8 +21,9 @@
       "esri/Map",
       "esri/views/MapView",
       "esri/Graphic",
+      "esri/symbols/PictureMarkerSymbol",
       "esri/layers/GraphicsLayer"
-   ], function(esriConfig, Map, MapView, Graphic, GraphicsLayer) {
+   ], function(esriConfig, Map, MapView, Graphic, GraphicsLayer, PictureMarkerSymbol) {
       esriConfig.apiKey = "AAPK2e38eeb2406a4ec09fc9ed971726a530rpzak_itO1OlgiyI-VVaxOXCb6163YW9Ac9VHF-lgjrp0dcGZl6Al0ZF3eaBmQjU";
         const map = new Map({
           basemap: "arcgis-topographic" // Basemap layer service
@@ -41,6 +42,8 @@
           longitude: -79.3957113663936,     
           latitude: 43.64540568441301
  };
+        var pictureMarkerSymbol = new PictureMarkerSymbol('https://abstractivista.github.io/pl2/heart.jpg', 25, 25);
+        
         const simpleMarkerSymbol = {
            type: "simple-marker",
           color: [255, 0, 0],  // Red
@@ -51,7 +54,7 @@
  }; 
     const pointGraphic = new Graphic({
       geometry: point,
-      symbol: simpleMarkerSymbol
+      symbol: pictureMarkerSymbol
     });
      graphicsLayer.add(pointGraphic);
         });
