@@ -1,0 +1,6 @@
+let symbol = {
+  type: "picture-marker",  // autocasts as new PictureMarkerSymbol()
+  url: "https://abstractivista.github.io/pl2/heart.jpg",
+  width: "64px",
+  height: "64px"
+};
